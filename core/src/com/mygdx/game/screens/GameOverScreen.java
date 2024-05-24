@@ -28,8 +28,8 @@ public void render(float delta) {
     game.batch.draw(GameOverTexture, 200, 0, 400, 400); 
   
     game.font.setColor(Color.WHITE);
-/*     game.font.draw(game.batch, "Game Over", 100, 150);
- */    game.font.draw(game.batch, "Your Score was: " + GameScreen.score, 350, 400);
+    if( GameScreen.score > GameScreen.highScore)GameScreen.highScore=GameScreen.score;
+   game.font.draw(game.batch, "Your Score was: " + GameScreen.score, 350, 400);
     game.font.draw(game.batch, "Tap 'R' to restart", 100, 100);
     game.font.draw(game.batch, "Press 'T' for Main Menu", 100, 50);
     game.batch.end();

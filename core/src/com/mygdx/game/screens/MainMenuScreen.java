@@ -45,13 +45,13 @@ public class MainMenuScreen extends ScreenTemplate {
         game.batch.draw(HowFarTexture, 200, 70, 400, 60);
         game.batch.draw(HighScoreTexture, 300, 430, 150, 30);
         
-
+        
         
         // Render menu elements here
         game.font.getData().setScale(2);
         game.font.setColor(Color.WHITE);
         game.font.getData().setScale(1);
-        game.font.draw(game.batch, ""+ GameScreen.score, 370, 420);
+        game.font.draw(game.batch, ""+ GameScreen.highScore, 370, 420);
         game.font.draw(game.batch, "(you are not) Welcome to Scramble :)) !!!  ", 260, 320);
         game.font.getData().setScale(1);
         game.font.draw(game.batch, " c BroGrammmers 2024", 80, 30);

@@ -25,6 +25,7 @@ public class GameScreen extends ScreenTemplate {
     private final Boss boss;
     private boolean isPaused;
     public static int score =0;
+    public static int highScore=0;
     public static int niveau =1;
     public static int kills =0;
     public float LevelTimeWait = 0;
