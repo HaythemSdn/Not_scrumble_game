@@ -32,16 +32,16 @@ public class Enemy implements GameObject {
     }
     public void detruit(){
         BomMusic.play();
-        currentTexture=BomTexture;
         GameScreen.kills++; 
-        Timer.schedule(new Timer.Task() {   
-            @Override
-            public void run() {
-                boundingRectangle.setPosition(-10000, -10000);
-                boundingRectangle.setSize(0, 0);
-            }
-        }, 1f);
-
+ 
+        currentTexture=BomTexture;
+            Timer.schedule(new Timer.Task() {   
+                @Override
+                public void run() {
+                    boundingRectangle.setPosition(-10000, -10000);
+                    boundingRectangle.setSize(0, 0);
+                }
+            }, 1f);
       }
 
     public boolean isDestroid(){

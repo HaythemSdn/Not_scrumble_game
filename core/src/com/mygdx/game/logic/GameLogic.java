@@ -72,19 +72,15 @@ public class GameLogic {
     private void spawnEnemydrops() {
         int x=800;
         int y = MathUtils.random(0, 780 - 64);
-        int num =1;
         int timeShoot = 1000000000;
         if(GameScreen.niveau == 4){
             timeShoot= 300000000;
-            num = 4;
             x=600;
             y= MathUtils.random(50, 400);
          }
         if (TimeUtils.nanoTime() - lastEnemyDropTime > timeShoot) {
-            for (int i = 0; i < num; i++) {
-                Enemy enemydrop = Enemy.createEnemy(x, y);
-                enemydrops.add(enemydrop);
-            }
+            Enemy enemydrop = Enemy.createEnemy(x, y);
+            enemydrops.add(enemydrop);
             lastEnemyDropTime = TimeUtils.nanoTime();
         }
     }
@@ -133,13 +129,13 @@ public class GameLogic {
 
         for (Enemy enemydrop : enemydrops) {
             // collision with spaceship
-            if (Intersector.overlaps(enemydrop.getHitBox(), spaceShip.getBoundingRectangle())) {
-                if(!enemydrop.isDestroid()){
-                    collisionSound.play();
-                    enemydrop.detruit();
-                    spaceShip.isHunted(20);
+                if (Intersector.overlaps(enemydrop.getHitBox(), spaceShip.getBoundingRectangle())) {
+                    if(!enemydrop.isDestroid()){
+                        collisionSound.play();
+                        enemydrop.detruit();
+                        spaceShip.isHunted(20);
+                    }
                 }
-            }
             // collision with bullets
             for (Bullet bullet : spaceShip.getShooting().getBullets()) {
                 if (Intersector.overlaps(enemydrop.getHitBox(), bullet.getBoundingRectangle())) {
@@ -169,7 +165,7 @@ public class GameLogic {
             if (Intersector.overlaps(powerUp.getBoundingRectangle(), spaceShip.getBoundingRectangle())) {
                 powerUp.detruit();
                 PowerUpMusic.play();
-                spaceShip.collectPowerUp(); // Implement the method to handle power-up collection
+                spaceShip.collectPowerUp(); 
             }
         }
 

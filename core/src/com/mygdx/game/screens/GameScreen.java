@@ -30,8 +30,8 @@ public class GameScreen extends ScreenTemplate {
     public float LevelTimeWait = 0;
     public static boolean isPausedForLevel=false;
     private Texture backgroundTexture;
-    final Texture KeepGoingTexture = new Texture(Gdx.files.internal("imgs/keep-going.png"));
-    final Texture ScoreTexture = new Texture(Gdx.files.internal("imgs/score.png"));
+    final static Texture KeepGoingTexture = new Texture(Gdx.files.internal("imgs/keep-going.png"));
+    final static Texture ScoreTexture = new Texture(Gdx.files.internal("imgs/score-2.png"));
 
 
 
@@ -142,10 +142,10 @@ public class GameScreen extends ScreenTemplate {
         Texture levelUpTexture = new Texture(Gdx.files.internal("imgs/level"+niveau+".png"));
         game.batch.draw(levelUpTexture, 320, 200, 100, 80);
         game.batch.draw(KeepGoingTexture, 260, 80, 220, 100);
-        game.batch.draw(ScoreTexture, 300, 330, 150, 80);
+        game.batch.draw(ScoreTexture, 300, 350, 150, 40);
         game.font.setColor(Color.WHITE);
         game.font.getData().setScale(2);
-        game.font.draw(game.batch, ""+pad(score) , 340, 350);
+        game.font.draw(game.batch, ""+pad(score) , 335, 350);
         map.changeMap(niveau);
         spaceShip.returnToIntialPosition();
         Timer.schedule(new Timer.Task() {   

@@ -104,7 +104,7 @@ public class SpaceShip implements GameObject {
 
     public void collectPowerUp() {
        
-        life += 50; 
+        life += 30; 
         if (life > 100) {
             life = 100; 
         }

@@ -27,8 +27,8 @@ public class PowerUps implements GameObject {
         return new PowerUps(x, y, width, height, speed);
     }
     public void detruit(){
-        boundingRectangle.width=0;
-        boundingRectangle.height=0;
+        boundingRectangle.setPosition(-10000, -10000);
+        boundingRectangle.setSize(0, 0);
     }
 
     public Rectangle getHitBox(){
